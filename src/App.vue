@@ -212,9 +212,9 @@
             &#169; Copyright {{ new Date().getFullYear() }} -
             <strong>Rac Cbe Majestic</strong> |
             <a
-              href="http://sethu.raccbemajestic3201.club"
+              href="https://sethupathi.herokuapp.com/"
               style="text-decoration: none;"
-              >Developer ❤️ - Rtr.Sethupathi, Secretary 2022-2 </a
+              >Developer ❤️ - Rtr.Sethupathi, President 2022-23 </a
             >|
           </v-card-text>
         </v-card>
