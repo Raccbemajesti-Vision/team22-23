@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "start": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest docs && cp CNAME docs"
+    "build": "vue-cli-service build --dest docs && cp CNAME docs && git add ."
   },
   "dependencies": {
     "axios": "^0.19.2",
