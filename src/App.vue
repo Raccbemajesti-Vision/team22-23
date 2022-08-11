@@ -276,7 +276,6 @@ import logo from "@/assets/HLogo.png";
 import logoWhite from "@/assets/logos/logoWhiteLow.png";
 import recognition from "./assets/recognitions/1r.jpeg";
 import jQuery from "jquery";
-import { auth } from "./firebase";
 import thirukural from "./thirukural.json";
 
 jQuery(document).ready(function () {
@@ -352,57 +351,9 @@ export default {
   created() {
     this.kural =
       thirukural.kural[Math.floor(Math.random() * (1330 - 1 + 1) + 1)];
-    // let a=true
-    // if (a) {
-    //   Notification.requestPermission().then(function (permission) {
-    //     if (permission)
-    //       messaging
-    //         .getToken()
-    //         .then((currentToken) => {
-    //           if (currentToken) {
-    //             console.log("client token", currentToken);
-    //             db.collection("Notifications")
-    //               .get()
-    //               .then((res) => {
-    //                 const a = [];
-    //                 res.forEach((res) => a.push(res.data().link));
-    //                 if (!a.includes(currentToken)) {
-    //                   db.collection("Notifications")
-    //                     .add({
-    //                       link: currentToken,
-    //                     })
-    //                     .then(() => {
-    //                       console.log("Registered For Notification");
-    //                     })
-    //                     .catch((error) => {
-    //                       console.error("Error adding: ", error);
-    //                     });
-    //                 } else {
-    //                   console.log("Token is already there");
-    //                 }
-    //               });
-    //           } else {
-    //             console.log(
-    //               "No registration token available. Request permission to generate one."
-    //             );
-    //           }
-    //         })
-    //         .catch((err) => {
-    //           console.log("An error occurred while retrieving token. ", err);
-    //         });
-    //   });
-    // }
-    if (auth.currentUser) {
-      this.isLoggedIn = true;
-      this.currentUser = auth.currentUser.email;
-    }
   },
   methods: {
-    logout: function () {
-      auth.signOut().then(() => {
-        this.$router.push("/");
-      });
-    },
+
   },
   computed: {
     cravings: function () {

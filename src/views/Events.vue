@@ -27,8 +27,6 @@
 
 <script>
 import Eventcard from "./eventCard";
-import { db } from "../firebase";
-
 export default {
   components: {
     Eventcard,
@@ -40,22 +38,7 @@ export default {
     };
   },
   mounted() {
-    // this.loadall();
-    db.collection("Events")
-      .get()
-      .then((res) => {
-        this.loading = false;
-        res.forEach((r) => {
-          const a = {
-            img: r.data().photo_url,
-            name: r.data().name,
-            text: r.data().description,
-            date: r.data().date + " " + r.data().time,
-            learnMore: r.data().link,
-          };
-          this.events.push(a);
-        });
-      });
+
     // Event.getAll().on("value", this.onDataChange);
     document.title = "Rac Cbe Majestic | Events";
   },
