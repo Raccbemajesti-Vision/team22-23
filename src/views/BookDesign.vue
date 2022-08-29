@@ -1,17 +1,9 @@
 <template>
   <div>
     <center>
-      <div class="my-5 py-2" v-if="$route.path == '/Scrapbook'">
-        <span class="myHeadingBolder">Scrap Book</span>
-        <span class="myHeadingLinear">2020-21</span>
-      </div>
       <div class="my-5 py-2" v-if="$route.path.split('/')[1] == 'Bulletin'">
         <span class="myHeadingBolder">Bulletin</span>
         <span class="myHeadingLinear">{{ $route.path.split("/")[2] }} </span>
-      </div>
-      <div class="my-5 py-2" v-if="$route.path.split('/')[1] == 'weeklyPress'">
-        <span class="myHeadingBolder">Weekly</span>
-        <span class="myHeadingLinear">Press </span>
       </div>
     </center>
 
@@ -60,12 +52,7 @@
     <center v-else>
       <img :src="dev" width="50%" />
     </center>
-    <center>
-      <div class="my-5 py-2" v-if="$route.path == '/Scrapbook'">
-        <span class="myHeadingBolder">Available</span>
-        <span class="myHeadingLinear">Soon...</span>
-      </div>
-    </center>
+
     <!-- <center><small>Use fullscreen for better experience</small></center> -->
   </div>
 </template>
@@ -73,14 +60,10 @@
 <script>
 import axios from "axios";
 import "vue-material-design-icons/styles.css";
-// import LeftIcon from 'vue-material-design-icons/ChevronLeftCircle'
-// import RightIcon from 'vue-material-design-icons/ArrowAll.vue'
 import FullIcon from "vue-material-design-icons/Fullscreen.vue";
 import Flipbook from "flipbook-vue";
 import "vue-slider-component/theme/antd.css";
 import dev from "../assets/dev.gif";
-import fBook from "../assets/first_page.jpeg";
-import { db } from "../firebase";
 
 export default {
   name: "bookApp",
@@ -208,22 +191,9 @@ export default {
         }
       }
     },
-    async importPress() {
-      let b = [];
-      await db
-        .collection("Press")
-        .orderBy("name")
-        .get()
-        .then((res) => {
-          res.forEach((r) => {
-            b.push(r.data().photo_url);
-          });
-        });
-      this.pages = [fBook, ...b];
-    },
+
     update(month) {
-      let url =
-        "https://milestone-makers.github.io/api.milestonemaker/Bulletin/";
+      let url = "https://raccbemajesti-vision.github.io/api.vision/Bulletin/";
       axios.get(url).then((res) => {
         let details = {
           view: this.$route.path,
@@ -242,37 +212,14 @@ export default {
         // r.keys().forEach((_, i) => (a.push(r(`./${i}.jpg`))));
         for (let i = 1; i <= details.no; i++) {
           a.push(
-            `https://milestone-makers.github.io/api.milestonemaker${details.view}/${i}.jpg`
+            `https://raccbemajesti-vision.github.io/api.vision${details.view}/${i}.jpg`
           );
         }
         this.pages = [...a];
       });
     },
-
-    scrap() {
-      let a = [];
-      for (let i = 0; i <= 185; i++) {
-        if (i == 182) {
-          console.log("Update Later..!!!");
-        } else
-          a.push(
-            `https://milestone-makers.github.io/api.milestonemaker/ScrapBook/${i}.jpg`
-          );
-      }
-      this.pages = [...a];
-    },
   },
   mounted() {
-    if (this.$route.path == "/Scrapbook") {
-      // this.importAll(require.context('../assets/ScrapBook', true, /\.jpg$/));
-      // this.importAll();
-      this.scrap();
-    }
-
-    if (this.$route.path == "/weeklyPress") {
-      this.importPress();
-    }
-
     if (this.$route.path.split("/")[1] == "Bulletin") {
       // console.log();
       this.update(this.$route.path.split("/")[2]);
@@ -315,7 +262,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
   width: 20px;
-  background-color: #0630be;
+  background-color: #eb5310;
   border-radius: 100px;
 }
 
@@ -323,7 +270,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 30px;
   opacity: 0.5;
   margin: 10px;
-  color: #0630be;
+  color: #eb5310;
   cursor: all-scroll;
   bottom: 2px;
 }
@@ -331,7 +278,7 @@ input[type="range"]::-webkit-slider-thumb {
 #fullScreen {
   font-size: 30px;
   margin: 10px;
-  color: #0630be;
+  color: #eb5310;
   cursor: pointer;
   bottom: 2px;
 }
@@ -341,7 +288,7 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 25px;
     opacity: 0.5;
     margin-right: 10px;
-    color: #0630be;
+    color: #eb5310;
     cursor: all-scroll;
     bottom: 2px;
   }

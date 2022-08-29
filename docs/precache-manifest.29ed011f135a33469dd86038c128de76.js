@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3160686b17a6c8b0a44a",
-    "url": "/css/about.3be662bd.css"
+    "revision": "051c1fefb9c6de070ca2",
+    "url": "/css/about.b10d8f37.css"
   },
   {
-    "revision": "58ec59a5aabbc0e33642",
+    "revision": "4898ab1644872ba0548c",
     "url": "/css/app.c29acea7.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/chunk-51cf4b09.7f711bdb.css"
   },
   {
-    "revision": "4e9562b5f3d9f8fcdc13",
-    "url": "/css/chunk-748f35eb.16fc8ee5.css"
+    "revision": "79e589a940505a694b8e",
+    "url": "/css/chunk-760cadf3.3372b2f8.css"
   },
   {
     "revision": "d18f364b105cb0c8c5c3",
@@ -94,10 +94,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "41f9daaf5684aa218418ef38bf6af66c",
     "url": "/img/elakiya.41f9daaf.jpg"
-  },
-  {
-    "revision": "df2d52f767fae07f312dc999b3807d05",
-    "url": "/img/first_page.df2d52f7.jpeg"
   },
   {
     "revision": "4a37b860850747dc72bf885641a8e983",
@@ -200,16 +196,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/vinesh.65e7a0d1.png"
   },
   {
-    "revision": "c382dd9356f8faabfde2573a102781e6",
+    "revision": "3fe154e77315c2293a1071a13458ba3f",
     "url": "/index.html"
   },
   {
-    "revision": "3160686b17a6c8b0a44a",
-    "url": "/js/about.9a4c32d8.js"
+    "revision": "051c1fefb9c6de070ca2",
+    "url": "/js/about.808720b5.js"
   },
   {
-    "revision": "58ec59a5aabbc0e33642",
-    "url": "/js/app.f12bee9d.js"
+    "revision": "4898ab1644872ba0548c",
+    "url": "/js/app.ba9cd32a.js"
   },
   {
     "revision": "9fc483c3886d6d21feed",
@@ -220,8 +216,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-51cf4b09.6d889148.js"
   },
   {
-    "revision": "4e9562b5f3d9f8fcdc13",
-    "url": "/js/chunk-748f35eb.0df86c8b.js"
+    "revision": "79e589a940505a694b8e",
+    "url": "/js/chunk-760cadf3.dfffae93.js"
   },
   {
     "revision": "d18f364b105cb0c8c5c3",

@@ -16,8 +16,9 @@
               <ul class="hardcover_front">
                 <li>
                   <img
-                    src="
-                      https://milestone-makers.github.io/api.milestonemaker/Bulletin/July/1.jpg
+                  :src="
+                      'https://raccbemajesti-vision.github.io/api.vision/Bulletin/' +
+                      i.firstPage
                     "
                     alt="Loading..."
                     width="100%"
@@ -32,7 +33,7 @@
               <ul class="page">
                 <li></li>
                 <li>
-                  <a class="btn" @click="$router.push(`Bulletin/July`)">Read</a>
+                  <a class="btn" @click="$router.push(`${i.view}`)">Read</a>
                 </li>
                 <li></li>
                 <li></li>
@@ -59,11 +60,11 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 export default {
   data() {
     return {
-      page: [{}],
+      page: [],
     };
   },
   mounted() {
@@ -72,11 +73,11 @@ export default {
   },
   methods: {
     update() {
-      // let url =
-      //   "https://milestone-makers.github.io/api.milestonemaker/Bulletin/";
-      // axios.get(url).then((res) => {
-      //   this.page = res.data.data;
-      // });
+      let url =
+        "https://raccbemajesti-vision.github.io/api.vision/Bulletin/";
+      axios.get(url).then((res) => {
+        this.page = res.data.data;
+      });
     },
   },
 };
