@@ -276,7 +276,7 @@
             </div>
           </div>
           <div class="avatarName">
-            Rtr. {{ i.name == "Logeshwaran VT" ? "IPP" : "PP" }}. {{ i.name }}
+            Rtr. {{ i.name == "Aarthi N" ? "IPP" : "PP" }}. {{ i.name }}
           </div>
           <div class="myTextAvatar">{{ i.year }}</div>
         </center>
