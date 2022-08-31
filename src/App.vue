@@ -54,6 +54,11 @@
                 <v-list-item-title>Bulletin</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+            <v-list-item @click="$router.push('/majestic-legends')">
+              <v-list-item-content>
+                <v-list-item-title>Majestic Legends</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
             <!-- <v-list-item @click="$router.push('/weeklyPress')">
               <v-list-item-content>
                 <v-list-item-title>Weekly Press</v-list-item-title>
@@ -74,17 +79,17 @@
                 <v-list-item-title>Blood Donate/Request</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item
+            <!-- <v-list-item
               href="https://sites.google.com/view/bibliophile-hub/home"
               target="_blank"
             >
               <v-list-item-content>
                 <v-list-item-title>Bibliophile Hub</v-list-item-title>
               </v-list-item-content>
-            </v-list-item>
+            </v-list-item> -->
           </v-list>
         </v-menu>
-<!-- 
+        <!-- 
         <v-menu open-on-hover bottom offset-y offset-overflow>
           <template v-slot:activator="{ on }">
             <v-btn class="hidden-sm-and-down" v-on="on" :color="color" text>
@@ -105,7 +110,6 @@
           </v-list>
         </v-menu> -->
 
-
         <v-btn
           class="hidden-sm-and-down"
           text
@@ -114,7 +118,7 @@
         >
           Contact
         </v-btn>
-    
+
         <v-btn
           icon
           small
@@ -333,10 +337,15 @@ export default {
       // { name: "Avatar", route: "/avatar" },
       // { name: "Weekly Press", route: "/weeklyPress" },
       { name: "Blood Request/Donate", route: "/BloodRequest" },
+      // {
+      //   name: "Bibliophile Hub",
+      //   href: "https://sites.google.com/view/bibliophile-hub/home",
+      // },
       {
-        name: "Bibliophile Hub",
-        href: "https://sites.google.com/view/bibliophile-hub/home",
+        name: "Majestic Legends",
+        route: '/majestic-legends',
       },
+      
       { name: "Contact", route: "/contactUs" },
       // { name: "ScrapBook 2020-21", route: "/Scrapbook" },
     ],
@@ -352,9 +361,7 @@ export default {
     this.kural =
       thirukural.kural[Math.floor(Math.random() * (1330 - 1 + 1) + 1)];
   },
-  methods: {
-
-  },
+  methods: {},
   computed: {
     cravings: function () {
       return this.$vuetify.breakpoint.name == "xs"

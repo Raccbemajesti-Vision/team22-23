@@ -1,6 +1,9 @@
 <template>
   <div class="home">
+    <!-- <v-img :src="group"> -->
+    <!-- <div class="overlay"></div> -->
     <Front></Front>
+    <!-- </v-img> -->
 
     <!-- <v-carousel
       cycle
@@ -14,6 +17,7 @@
         </v-row>
       </v-carousel-item>
     </v-carousel> -->
+
     <center>
       <div>
         <span class="myHeadingBolder">About</span>
@@ -59,6 +63,10 @@
           <span class="myHeadingLinear">Highlights</span>
         </div>
       </v-flex>
+      <v-flex xs12 md12 mt-5>
+        <v-img :src="group"> </v-img>
+      </v-flex>
+
       <v-flex xs12 md12 mt-5>
         <v-layout>
           <v-flex xs12 md6 class="hidden-sm-and-down">
@@ -260,7 +268,7 @@
       </v-flex>
     </v-layout>
 
-    <center>
+    <!-- <center>
       <div class="mt-5 py-2">
         <span class="myHeadingBolder">Majestic</span>
         <span class="myHeadingLinear">Legends</span>
@@ -281,7 +289,7 @@
           <div class="myTextAvatar">{{ i.year }}</div>
         </center>
       </v-flex>
-    </v-layout>
+    </v-layout> -->
 
     <center>
       <div class="mt-5 py-2">
@@ -305,6 +313,26 @@
         </center>
       </v-flex>
     </v-layout>
+
+    <center>
+      <div class="mt-5 py-2">
+        <span class="myHeadingBolder">Majestic</span>
+        <span class="myHeadingLinear">Vision</span>
+      </div>
+    </center>
+
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      <div class="Avatarcontainer">
+        <div class="auth_img_scroll">
+          <img
+            v-for="(img, i) in scroll"
+            :key="i"
+            :src="img.image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </marquee>
 
     <!-- <v-layout column wrap py-5>
         <v-flex xs12 md12>
@@ -341,6 +369,8 @@ import logo from "@/assets/logos/girllogo.png";
 import Bulletin from "./bulletin.vue";
 // import SlideCard from "./slideCard";
 import Front from "./front.vue";
+import group from "@/assets/group.png";
+// import groupFull from "@/assets/group-full.jpg";
 import toteach from "@/assets/logos/toteach.svg";
 import tohelp from "@/assets/logos/tohelp.svg";
 import tobuild from "@/assets/logos/tobuild.svg";
@@ -362,7 +392,7 @@ import pranay from "@/assets/legends/pranay.png";
 import rakesh from "@/assets/legends/rakesh.png";
 import ritish from "@/assets/legends/ritish.jpg";
 import saishankar from "@/assets/legends/saishankar.png";
-import logesh from "@/assets/legends/logesh.jpeg"
+import logesh from "@/assets/legends/logesh.jpeg";
 import sandeep from "@/assets/legends/sandeep.png";
 import shankit from "@/assets/legends/shankit.png";
 import viensh from "@/assets/legends/vinesh.png";
@@ -398,6 +428,7 @@ export default {
           logo: tobuild,
         },
       ],
+      group: group,
       sethu: sethu,
       window: {
         width: 0,
@@ -411,6 +442,7 @@ export default {
       teamSlides: [],
       slides: [],
       Rslides: [],
+      scroll: [],
       legends: [
         {
           name: "Geeta Lakshmi",
@@ -586,6 +618,7 @@ export default {
     document.title = "Rac Cbe Majestic | Home";
     this.handleResize();
     this.importAll(require.context("../assets/carosal", true, /\.jpeg$/));
+    this.importScrollAll(require.context("../assets/scroll", true, /\.png$/));
   },
   created() {
     window.addEventListener("resize", this.handleResize);
@@ -595,13 +628,23 @@ export default {
     window.removeEventListener("resize", this.handleResize);
   },
   methods: {
+    importScrollAll(r) {
+      let a = [];
+      console.log({ r });
+      r.keys().forEach((key) =>
+        a.push({
+          image: r(key),
+        })
+      );
+      this.scroll = a;
+    },
     importAll(r) {
       let a = [];
       let quote = [
         'முதற்படி<span class="slideBolder">Orientation</span>',
         'மனமகிழ்<span class="slideBolder">Phase-1</span>',
         'முதற்படி<span class="slideBolder">Orientation</span>',
-        'முதற்படி<span class="slideBolder">Orientation</span>'
+        'முதற்படி<span class="slideBolder">Orientation</span>',
       ];
       r.keys().forEach((key, i) =>
         a.push({
@@ -667,10 +710,23 @@ export default {
   /* transform: rotate(0deg); */
   transition: all 0.2s ease-in-out;
 }
+.overlay {
+  position: absolute;
+  background-color: red;
+  z-index: 200;
+}
 
 .Avatarcontainer .auth_img img {
   width: 150px;
   height: 150px;
+  object-fit: cover;
+  /* transform: scale(1.15); */
+  transition: all 0.2s ease-in-out;
+}
+
+.Avatarcontainer .auth_img_scroll img {
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   /* transform: scale(1.15); */
   transition: all 0.2s ease-in-out;

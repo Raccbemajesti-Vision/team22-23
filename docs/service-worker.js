@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.3fd88c8ce1c11bf9d92fb7588dbce3ed.js"
+  "/precache-manifest.0d1e816d22230dbb002a14a894702ee3.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "Rotaract"});

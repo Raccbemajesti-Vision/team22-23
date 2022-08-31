@@ -88,6 +88,14 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/bulletin.vue"),
   },
   {
+    path: "/majestic-legends",
+    name: "past-presidents",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ "../views/ml.vue"),
+  },
+  {
     path: "/weeklyPress",
     name: "weeklyPress",
     // route level code-splitting
@@ -143,7 +151,7 @@ const routes = [
     meta: {
       requiresGuest: true,
     },
-  }
+  },
 ];
 
 const router = new VueRouter({
