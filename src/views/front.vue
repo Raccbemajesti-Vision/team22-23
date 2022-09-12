@@ -7,7 +7,7 @@
         <h2>
           Rotaract Club of Coimbatore Majestic<br />
           <span style="font-size: 18px; color: #0630be;"
-            >Impact Year | #MilestoneMakers</span
+            >Celebrate Year | #vision</span
           >
         </h2>
       </center>

@@ -65,6 +65,7 @@
       </v-flex>
       <v-flex xs12 md12 mt-5>
         <v-img :src="group"> </v-img>
+        <center>Team 2022-23</center>
       </v-flex>
 
       <v-flex xs12 md12 mt-5>

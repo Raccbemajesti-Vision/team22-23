@@ -5,10 +5,11 @@
         app
         dark
         height="65"
+        width="95%"
         :class="[
           $vuetify.breakpoint.sm || $vuetify.breakpoint.xs
-            ? 'fullColor'
-            : 'sidecut',
+            ? 'fullColor header-top'
+            : 'sidecut header-top',
         ]"
       >
         <div class="d-flex layout align-start justify-start">
@@ -378,11 +379,20 @@ export default {
   color: #0630be;
   font-family: "Josefin Sans", sans-serif;
 }
+
+.header-top {
+  margin-top: 10px !important;
+  margin: auto;
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 600px) {
   .logoTop {
-    width: 70% !important;
+    width: 60% !important;
   }
 }
+
 .logoTop {
   width: 50%;
 }
