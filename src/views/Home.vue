@@ -343,10 +343,9 @@
       </div>
       <p>Collaborated Clubs</p>
     </center>
-    <center>
+
       <v-carousel
         cycle
-        height="50vh"
         hide-delimiter-background
         hide-delimiters
         :show-arrows="false"
@@ -383,7 +382,7 @@
           </v-layout>
         </v-carousel-item>
       </v-carousel>
-    </center>
+ 
 
     <!-- <v-layout column wrap py-5>
         <v-flex xs12 md12>
