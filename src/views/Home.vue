@@ -320,6 +320,7 @@
         <span class="myHeadingBolder">Majestic</span>
         <span class="myHeadingLinear">Vision</span>
       </div>
+      <p>Installation 2022-23</p>
     </center>
 
     <marquee behavior="scroll" direction="left" scrollamount="5">
@@ -334,6 +335,55 @@
         </div>
       </div>
     </marquee>
+
+    <center>
+      <div class="mt-5 py-2">
+        <span class="myHeadingBolder">Beyond</span>
+        <span class="myHeadingLinear">Boundaries</span>
+      </div>
+      <p>Collaborated Clubs</p>
+    </center>
+    <center>
+      <v-carousel
+        cycle
+        height="50vh"
+        hide-delimiter-background
+        hide-delimiters
+        :show-arrows="false"
+      >
+        <v-carousel-item v-for="(slide, i) in slides" :key="i">
+          <v-layout
+            style="background-color: #f6af8f;"
+            class="mx-5 px-3"
+            align-center
+            justify-center
+            row
+            wrap
+          >
+            <v-flex xs12 md2 text-xs-center>
+              <center>
+                <img
+                  :src="chennaiCentral"
+                  width="80%"
+                  class="mt-5"
+                  style="background: white;padding: 10px;"
+                />
+              </center>
+            </v-flex>
+            <v-flex xs12 md10>
+              <div class="mx-5 my-3 #0630BE py-5 px-3">
+                <h3>Rotaract Club of Chennai Central, RID 3232</h3>
+                <p class="myText" style="color: black;">
+                  It's been a wonderful session with you all.Thank you so much
+                  Rac of Coimbatore Majestic for this Wonderful project Beyond
+                  Boundaries... We are heartily invite you to visit Chennai...
+                </p>
+              </div>
+            </v-flex>
+          </v-layout>
+        </v-carousel-item>
+      </v-carousel>
+    </center>
 
     <!-- <v-layout column wrap py-5>
         <v-flex xs12 md12>
@@ -404,6 +454,8 @@ import sammu from "@/assets/legends/sammu.jpeg";
 import jimry from "@/assets/drr/jimry.jpg";
 import noFoto from "@/assets/logo.png";
 
+import chennaiCentral from "@/assets/bb/chennai-central.png";
+
 export default {
   components: {
     // Carousel,
@@ -429,6 +481,7 @@ export default {
           logo: tobuild,
         },
       ],
+      chennaiCentral: chennaiCentral,
       group: group,
       sethu: sethu,
       window: {
