@@ -39,7 +39,11 @@
           </center>
         </v-flex> -->
       </v-layout>
+      
     </v-container>
+    <center>
+        <img :src="recognition" width="50%"  />
+      </center>
 
     <v-dialog v-model="dialog" width="500">
       <v-card>
@@ -78,11 +82,13 @@
 
 <script>
 import logo from "@/assets/logos/contact.svg";
+import recognition from "../assets/recognitions/1r.jpeg";
 export default {
   data() {
     return {
       logo: logo,
       dialog: false,
+      recognition:recognition
     };
   },
   mounted() {

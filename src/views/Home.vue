@@ -231,6 +231,8 @@
     </v-layout> -->
     <div class="my-5"></div>
     <Bulletin />
+    <div class="my-5"></div>
+    <Events />
     <v-layout class="grey lighten-2 py-5 px-3" align-center justify-center wrap>
       <v-flex xs12 md4 my-3>
         <div style="display: flex; justify-content: center;">
@@ -344,45 +346,44 @@
       <p>Collaborated Clubs</p>
     </center>
 
-      <v-carousel
-        cycle
-        hide-delimiter-background
-        hide-delimiters
-        :show-arrows="false"
-      >
-        <v-carousel-item v-for="(slide, i) in slides" :key="i">
-          <v-layout
-            style="background-color: #f6af8f;"
-            class="mx-5 px-3"
-            align-center
-            justify-center
-            row
-            wrap
-          >
-            <v-flex xs12 md2 text-xs-center>
-              <center>
-                <img
-                  :src="chennaiCentral"
-                  width="80%"
-                  class="mt-5"
-                  style="background: white;padding: 10px;"
-                />
-              </center>
-            </v-flex>
-            <v-flex xs12 md10>
-              <div class="mx-5 my-3 #0630BE py-5 px-3">
-                <h3>Rotaract Club of Chennai Central, RID 3232</h3>
-                <p class="myText" style="color: black;">
-                  It's been a wonderful session with you all.Thank you so much
-                  Rac of Coimbatore Majestic for this Wonderful project Beyond
-                  Boundaries... We are heartily invite you to visit Chennai...
-                </p>
-              </div>
-            </v-flex>
-          </v-layout>
-        </v-carousel-item>
-      </v-carousel>
- 
+    <v-carousel
+      cycle
+      hide-delimiter-background
+      hide-delimiters
+      :show-arrows="false"
+    >
+      <v-carousel-item v-for="(slide, i) in slides" :key="i">
+        <v-layout
+          style="background-color: #f6af8f;"
+          class="mx-5 px-3"
+          align-center
+          justify-center
+          row
+          wrap
+        >
+          <v-flex xs12 md2 text-xs-center>
+            <center>
+              <img
+                :src="chennaiCentral"
+                width="80%"
+                class="mt-5"
+                style="background: white; padding: 10px;"
+              />
+            </center>
+          </v-flex>
+          <v-flex xs12 md10>
+            <div class="mx-5 my-3 #0630BE py-5 px-3">
+              <h3>Rotaract Club of Chennai Central, RID 3232</h3>
+              <p class="myText" style="color: black;">
+                It's been a wonderful session with you all.Thank you so much Rac
+                of Coimbatore Majestic for this Wonderful project Beyond
+                Boundaries... We are heartily invite you to visit Chennai...
+              </p>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-carousel-item>
+    </v-carousel>
 
     <!-- <v-layout column wrap py-5>
         <v-flex xs12 md12>
@@ -417,6 +418,7 @@ import logo from "@/assets/logos/girllogo.png";
 // } from "vue-carousel";
 // import Eventcard from "./eventCard";
 import Bulletin from "./bulletin.vue";
+import Events from "./Events.vue";
 // import SlideCard from "./slideCard";
 import Front from "./front.vue";
 import group from "@/assets/group.png";
@@ -462,6 +464,7 @@ export default {
     // // Eventcard,
     // SlideCard,
     Bulletin,
+    Events,
     Front,
   },
   data() {

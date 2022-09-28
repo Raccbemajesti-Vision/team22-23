@@ -279,7 +279,7 @@
 <script>
 import logo from "@/assets/HLogo.png";
 import logoWhite from "@/assets/logos/logoWhiteLow.png";
-import recognition from "./assets/recognitions/1r.jpeg";
+import recognition from "./assets/bb/bb.jpeg";
 import jQuery from "jquery";
 import thirukural from "./thirukural.json";
 

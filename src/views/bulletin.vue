@@ -55,7 +55,7 @@
         </ul>
       </v-flex>
     </v-layout>
-    <center><small>Touch to read bulletin</small></center>
+    <center><small>Touch and swipe to read bulletin</small></center>
   </div>
 </template>
 

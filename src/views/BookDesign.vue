@@ -5,6 +5,10 @@
         <span class="myHeadingBolder">Bulletin</span>
         <span class="myHeadingLinear">{{ $route.path.split("/")[2] }} </span>
       </div>
+      <div class="my-5 py-2" v-else>
+        <span class="myHeadingBolder">Event</span>
+        <span class="myHeadingLinear">Book</span>
+      </div>
     </center>
 
     <div
@@ -193,35 +197,52 @@ export default {
     },
 
     update(month) {
-      let url = "https://raccbemajesti-vision.github.io/api.vision/Bulletin/";
-      axios.get(url).then((res) => {
-        let details = {
-          view: this.$route.path,
-          no: 0,
-        };
-
-        res.data.data.forEach((a) => {
-          if (a.view.split("/")[2] == month)
-            details = {
-              view: this.$route.path,
-              no: a.total,
-            };
+      if (this.$route.path.split("/")[1] == "Bulletin") {
+        let url = "https://raccbemajesti-vision.github.io/api.vision/Bulletin/";
+        axios.get(url).then((res) => {
+          let details = {
+            view: this.$route.path,
+            no: 0,
+          };
+          res.data.data.forEach((a) => {
+            if (a.view.split("/")[2] == month)
+              details = {
+                view: this.$route.path,
+                no: a.total,
+              };
+          });
+          console.log({ details });
+          let a = [];
+          // r.keys().forEach((_, i) => (a.push(r(`./${i}.jpg`))));
+          for (let i = 1; i <= details.no; i++) {
+            a.push(
+              `https://raccbemajesti-vision.github.io/api.vision${details.view}/${i}.jpg`
+            );
+          }
+          this.pages = [...a];
         });
-        console.log({ details });
-        let a = [];
-        // r.keys().forEach((_, i) => (a.push(r(`./${i}.jpg`))));
-        for (let i = 1; i <= details.no; i++) {
-          a.push(
-            `https://raccbemajesti-vision.github.io/api.vision${details.view}/${i}.jpg`
-          );
-        }
-        this.pages = [...a];
-      });
+      } else {
+        let url = "https://raccbemajesti-vision.github.io/api.vision/Events/";
+        axios.get(url).then((res) => {
+          console.log(res.data.data.count);
+          let a = [];
+          // r.keys().forEach((_, i) => (a.push(r(`./${i}.jpg`))));
+          for (let i = 0; i <= res.data.data.count; i++) {
+            a.push(
+              `https://raccbemajesti-vision.github.io/api.vision/Events/Images/${i}.jpeg`
+            );
+          }
+          let lastPage = `https://raccbemajesti-vision.github.io/api.vision/Events/Images/end.jpeg`;
+          this.pages = [...a, lastPage];
+        });
+      }
     },
   },
   mounted() {
     if (this.$route.path.split("/")[1] == "Bulletin") {
       // console.log();
+      this.update(this.$route.path.split("/")[2]);
+    } else {
       this.update(this.$route.path.split("/")[2]);
     }
     this.range_slider_input();
